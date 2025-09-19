@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <form id="login">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username"required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Input password" required><br><br>
+        <label for="password">Confirm Password:</label>
+        <input type="password" id="password" name="password" placeholder="Confirm password" required><br><br>
+
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+
+        <p>Pronouns:</p>
+        <input type="checkbox" id="she/her" name="pronouns" value="She/Her">
+        <label for="she/her">She/Her</label>
+        <input type="checkbox" id="he/him" name="pronouns" value="He/Him">
+        <label for="he/him">He/Him</label>
+        <input type="checkbox" id="they/them" name="pronouns" value="They/Them">
+        <label for="they/them">They/Them</label><br><br>
+
+        <label for="bio">Add bio:</label><br>
+        <textarea id="bio" maxlength="100"></textarea>
+        <p id="count">0/100</p>
+
+        <script>
+            const bio = document.getElementById("bio");
+            const count = document.getElementById("count");
+
+            bio.addEventListener("input", function() {
+            count.textContent = bio.value.length + "/100";
+        });
+        
+        $("#bio").on("input", function() {
+            $("#count").text($(this).val().length + "/100");
+        });
+
+        $("#login").submit(function(e){
+            e.preventDefault();
+            if($("#username").val() === "" || $("#password").val() === ""){
+                alert("Please fill in all fields");
+
+            } else {
+
+                alert("Login Successful!");
+            }
+        });
+        </script>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
