@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS EXERCISE</title>
+  <style>
+    .highlight {
+      background-color: rgb(255, 144, 168);
+      font-weight: bold;
+    }
+    #box, #panel {
+      width: 200px;
+      height: 100px;
+      background-color: rgb(192, 245, 255);
+      margin: 10px 0;
+      transition: all 1s ease;
+      overflow: hidden;
+    }
+    #panel {
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>JS EXERCISES</h2>
+
+<p id="demo">It is fractured, but whole</p>
+<div id="box">Stick of Truth</div>
+<div id="panel">Big whoops</div>
+<img id="myImg" src="https://via.placeholder.com/150" alt="Image">
+<input type="text" id="name" placeholder="Enter your name">
+<br>
+<br>
+    
+
+<button id="txt">Change Text</button>
+<button id="bg">Change Background Color</button>
+<button id="hide">Hide Element</button>
+<button id="show">Show Element</button>
+<button id="visi">Toggle Visibility</button><br>
+
+<button id="add">Add Class</button>
+<button id="remove">Remove Class</button>
+<button id="toggle">Toggle Class</button>
+<button id="img">Change Image</button>
+<button id="getinput">Get Input Value</button><br>
+
+<button id="setinput">Set Input Value</button>
+<button id="append">Append Content</button>
+<button id="prepend">Prepend Content</button>
+<button id="fadeout">Fade Out</button>
+<button id="fadein">Fade In</button><br>
+
+<button id="up">Slide Up</button>
+<button id="down">Slide Down</button>
+<button id="multi">Change Multiple CSS</button>
+<button id="change">Click to Change Text</button><br>
+
+
+<script>
+
+  document.getElementById("txt").onclick = function() {
+    document.getElementById("demo").innerText = "Going down to SouthPark, gonna have myself some time";
+  };
+
+  
+  document.getElementById("bg").onclick = function() {
+    document.getElementById("box").style.backgroundColor = "pink";
+  };
+
+  
+  document.getElementById("hide").onclick = function() {
+    document.getElementById("demo").style.display = "none";
+  };
+
+  
+  document.getElementById("show").onclick = function() {
+    document.getElementById("demo").style.display = "block";
+  };
+
+  document.getElementById("visi").onclick = function() {
+    let el = document.getElementById("demo");
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+  };
+
+  
+  document.getElementById("add").onclick = function() {
+    document.getElementById("demo").classList.add("highlight");
+  };
+
+  
+  document.getElementById("remove").onclick = function() {
+    document.getElementById("demo").classList.remove("highlight");
+  };
+
+  
+  document.getElementById("toggle").onclick = function() {
+    document.getElementById("demo").classList.toggle("highlight");
+  };
+
+  
+  document.getElementById("img").onclick = function() {
+    document.getElementById("myImg").src = "https://via.placeholder.com/150/0000FF/FFFFFF";
+  };
+
+  
+  document.getElementById("getinput").onclick = function() {
+    let val = document.getElementById("name").value;
+    console.log("Input value:", val);
+    alert("You typed: " + val);
+  };
+
+  
+  document.getElementById("setinput").onclick = function() {
+    document.getElementById("name").value = "WonderWoman";
+  };
+
+  
+  document.getElementById("append").onclick = function() {
+    document.getElementById("demo").innerHTML += " OH MY GOD!!";
+  };
+
+  
+  document.getElementById("prepend").onclick = function() {
+    let el = document.getElementById("demo");
+    el.innerHTML = "Hey " + el.innerHTML;
+  };
+
+  
+  document.getElementById("fadeout").onclick = function() {
+    let box = document.getElementById("box");
+    box.style.transition = "opacity 1s";
+    box.style.opacity = 0;
+  };
+
+  
+  document.getElementById("fadein").onclick = function() {
+    let box = document.getElementById("box");
+    box.style.transition = "opacity 1s";
+    box.style.opacity = 1;
+  };
+
+
+  document.getElementById("up").onclick = function() {
+    document.getElementById("panel").style.maxHeight = "0px";
+  };
+
+  
+  document.getElementById("down").onclick = function() {
+    document.getElementById("panel").style.maxHeight = "200px";
+  };
+
+  document.getElementById("multi").onclick = function() {
+    let el = document.getElementById("demo");
+    el.style.color = "white";
+    el.style.backgroundColor = "black";
+  };
+
+
+  document.getElementById("demo").onmouseover = function() {
+    this.style.color = "red";
+  };
+
+  
+  document.getElementById("change").onclick = function() {
+    document.getElementById("demo").innerText = "STOP!";
+  };
+
+</script>
+
+</body>
+</html>
